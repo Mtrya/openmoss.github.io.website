@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>团队成员 | OpenMOSS Lab</title>
+  <link rel="icon" type="image/png" href="assets/img/openmoss-logo.png">
+  <meta name="description" content="OpenMOSS Lab 团队成员介绍">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-gO9FwZP1781OeR3SiPtK0aGpG99nmHn7+O+kO5RAwOB1p5MNDoAuCEi0aKBslZx2drXr/7L0KleKX2ND/qY1KQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/style.css?v=20251102g">
+</head>
+<body class="people-page">
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a class="brand" href="index.html">
+        <img class="brand-logo" src="assets/img/openmoss-logo.png" alt="OpenMOSS Lab logo">
+        <span class="brand-name">OpenMOSS Lab</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <ul class="nav-links" id="primary-navigation">
+        <li><a href="index.html#pillars" data-i18n="nav.research">研究方向</a></li>
+        <li><a href="index.html#people" data-i18n="nav.people">团队成员</a></li>
+        <li><a href="index.html#resources" data-i18n="nav.resources">开放资源</a></li>
+        <li><a href="https://www.open-moss.com/en/" data-i18n="nav.highlights">最新亮点</a></li>
+        <li><a href="positions.html" data-i18n="nav.join">加入我们</a></li>
+        <li>
+          <button id="lang-toggle" class="lang-btn" aria-label="切换语言">
+            <i class="fa-solid fa-language"></i>
+            <span class="lang-text">EN</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="container sec" style="padding-top: 60px;">
+      <h1 data-i18n="peoplePage.title">团队成员</h1>
+      
+      <h2 class="section-subtitle" data-i18n="people.core">核心成员</h2>
+      <div class="team-members" id="core-members-container" style="margin-bottom: 60px;"></div>
+
+      <h2 class="section-subtitle" data-i18n="peoplePage.postdocs">博士后</h2>
+      <div class="team-members" id="postdocs-container" style="margin-bottom: 60px;"></div>
+
+      <h2 class="section-subtitle" data-i18n="peoplePage.phdStudents">博士研究生</h2>
+      <div class="team-members" id="phd-students-container" style="margin-bottom: 60px;"></div>
+
+      <h2 class="section-subtitle" data-i18n="peoplePage.masterStudents">硕士研究生</h2>
+      <div class="team-members" id="master-students-container" style="margin-bottom: 60px;"></div>
+
+      <h2 class="section-subtitle" data-i18n="peoplePage.undergraduates">本科生</h2>
+      <div class="team-members" id="undergraduates-container" style="margin-bottom: 60px;"></div>
+
+      <h2 class="section-subtitle" data-i18n="peoplePage.visitingStudents">访问学生</h2>
+      <div class="team-members" id="visiting-students-container" style="margin-bottom: 60px;"></div>
+      
+      <div style="margin-top: 40px; text-align: center;">
+        <p data-i18n="peoplePage.contactInfo">如需了解更多团队信息或加入我们，请联系：<a href="mailto:xpqiu@fudan.edu.cn">xpqiu@fudan.edu.cn</a></p>
+      </div>
+
+      <div style="margin-top: 60px; text-align: center;">
+        <a class="btn btn-primary" href="index.html" data-i18n="peoplePage.backHome">返回首页</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4 data-i18n="footer.links">快速链接</h4>
+          <ul>
+            <li><a href="projects.html" data-i18n="footer.software">软件</a></li>
+            <li><a href="positions.html" data-i18n="footer.career">职业发展</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.affiliations">合作单位</h4>
+          <ul>
+            <li><a href="https://ai.fudan.edu.cn/" data-i18n="footer.fudan">复旦大学计算与智能创新学院</a></li>
+            <li><a href="https://nlp.fudan.edu.cn/" data-i18n="footer.fudannlp">复旦大学自然语言处理团队</a></li>
+            <li><a href="https://www.sii.edu.cn/" data-i18n="footer.sii">上海创智学院</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="footer.connect">联系我们</h4>
+          <ul>
+            <li><a href="https://github.com/OpenMOSS"><i class="fa-brands fa-github"></i> GitHub</a></li>
+            <li><a href="https://twitter.com/openmosslab"><i class="fa-brands fa-x-twitter"></i> Twitter</a></li>
+            <li><a href="mailto:xpqiu@fudan.edu.cn"><i class="fa-solid fa-envelope"></i> Email</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>OpenMOSS Lab</h4>
+          <ul>
+            <li data-i18n="footer.address1">上海市徐汇区华发路699弄3号</li>
+            <li data-i18n="footer.address2">上海市杨浦区淞沪路2005号2X号楼</li>
+            <li data-i18n="footer.address3">中国</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="footer-note">
+        <p><a href="webmaster.html" style="color: inherit; text-decoration: none;">&copy; <span id="year"></span> OpenMOSS Lab.</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 必须先加载 data.js，再加载 main.js -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
