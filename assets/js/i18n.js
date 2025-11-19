@@ -39,7 +39,7 @@
 
             // 团队成员
             'people.title': '团队成员',
-            'people.subtitle.faculty': '导师团队',
+            'people.subtitle.faculty': '教职人员',
             'people.subtitle.postdocs': '博士后',
             'people.subtitle.phd': '博士研究生',
             'people.subtitle.master': '硕士研究生',
@@ -54,6 +54,7 @@
             'people.card.alumni.link': '了解更多',
             'people.toc': '目录',
             'people.backToTop': '回到顶部',
+            'people.viewAlumni': '查看校友网络',
             'people.updating': '内容正在更新。',
 
             // 校友网络
@@ -61,6 +62,7 @@
             'alumni.desc': '我们的校友遍布学术界和工业界，在世界各地的顶尖机构和公司中发挥着重要作用。',
             'alumni.toc': '目录',
             'alumni.backToTop': '回到顶部',
+            'alumni.viewPeople': '查看团队成员',
             'alumni.updating': '内容正在更新。',
 
             // 开放资源
@@ -94,7 +96,7 @@
             'resources.course.community.desc': '加入暑期学校，与全球研究者交流学习，共同推进 AI 技术发展。',
 
             // 加入我们
-            'positions.title': '加入 OpenMOSS Team',
+            'positions.title': '加入我们',
             'positions.intro': '我们正在招募对开放系统和负责任 AI 充满热情的研究人员和工程师。如果您希望在大规模 AI 系统、多模态学习、具身智能等前沿领域进行研究，欢迎加入我们！',
             'positions.why.title': '为什么选择我们',
             'positions.apply.title': '如何申请',
@@ -196,6 +198,7 @@
             'people.card.alumni.link': 'Learn More',
             'people.toc': 'Contents',
             'people.backToTop': 'Back to Top',
+            'people.viewAlumni': 'View Alumni',
             'people.updating': 'Content is being updated.',
 
             // Alumni
@@ -203,10 +206,11 @@
             'alumni.desc': 'Our alumni span academia and industry, playing important roles in top institutions and companies worldwide.',
             'alumni.toc': 'Contents',
             'alumni.backToTop': 'Back to Top',
+            'alumni.viewPeople': 'View People',
             'alumni.updating': 'Content is being updated.',
 
             // Resources
-            'resources.title': 'Open Resources',
+            'resources.title': 'Resources',
             'resources.desc': 'We are committed to sharing our achievements with global researchers and developers through open-source projects and open courses, promoting AI technology development.',
             'resources.highlight.tools.title': 'Open Source Tools',
             'resources.highlight.tools.desc': 'FastNLP, CoLLiE, SpeechGPT, UnifiedToolHub and other open-source projects support the global AI ecosystem.',
@@ -236,7 +240,7 @@
             'resources.course.community.desc': 'Join the summer school to exchange ideas with global researchers and advance AI technology together.',
 
             // Positions
-            'positions.title': 'Join OpenMOSS Team',
+            'positions.title': 'Join Us',
             'positions.intro': 'We are recruiting researchers and engineers passionate about open systems and responsible AI. If you want to conduct research in cutting-edge areas such as large-scale AI systems, multimodal learning, and embodied intelligence, we welcome you to join us!',
             'positions.why.title': 'Why Choose Us',
             'positions.apply.title': 'How to Apply',

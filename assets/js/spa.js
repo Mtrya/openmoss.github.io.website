@@ -36,7 +36,6 @@
       { id: 'home', key: 'nav.home' },
       { id: 'research', key: 'nav.research' },
       { id: 'people', key: 'nav.people' },
-      { id: 'alumni', key: 'nav.alumni' },
       { id: 'resources', key: 'nav.resources' },
       { id: 'positions', key: 'nav.positions' }
     ];
@@ -92,7 +91,7 @@
 
   function renderFooter() {
     const year = new Date().getFullYear();
-    
+
     // 地址列表，支持内嵌链接
     const addresses = currentLang === 'zh' ? [
       '杨浦区淞沪路2005号 <a href="https://www.fudan.edu.cn/" target="_blank" class="footer-inline-link">复旦大学</a> 二号交叉学科楼',
@@ -103,13 +102,13 @@
       '3 Lane 699, Huafa Road, <a href="https://www.sii.edu.cn/" target="_blank" class="footer-inline-link">Shanghai Innovation Institute</a>, Xuhui District',
       'Shanghai, China'
     ];
-    
+
     const partners = [
       { label: t('footer.fudan'), url: 'https://ai.fudan.edu.cn/' },
       { label: t('footer.teai'), url: 'https://teai.fudan.edu.cn/' },
       { label: t('footer.nlp'), url: 'https://nlp.fudan.edu.cn/main.htm' }
     ];
-    
+
     return `
       <footer class="footer">
         <div class="container">
@@ -258,14 +257,14 @@
             <p>${t('resources.highlight.tools.desc')}</p>
             <div class="hero-actions" style="margin-top: auto; width: 100%;">
               <a class="btn btn-outline" href="https://github.com/OpenMOSS" target="_blank">${t('resources.highlight.tools.btn1')}</a>
-              <a class="btn btn-outline" href="#resources">${t('resources.highlight.tools.btn2')}</a>
+              <a class="btn btn-outline" href="javascript:void(0)" onclick="window.location.hash='resources'; setTimeout(() => { const el = document.getElementById('projects'); if(el) { const offset = 100; const bodyRect = document.body.getBoundingClientRect().top; const elementRect = el.getBoundingClientRect().top; const elementPosition = elementRect - bodyRect; const offsetPosition = elementPosition - offset; window.scrollTo({ top: offsetPosition, behavior: 'smooth' }); } }, 200);">${t('resources.highlight.tools.btn2')}</a>
             </div>
           </article>
           <article class="people-card">
             <h3>${t('resources.highlight.courses.title')}</h3>
             <p>${t('resources.highlight.courses.desc')}</p>
             <div class="hero-actions" style="margin-top: auto; width: 100%;">
-              <a class="btn btn-outline" href="#resources">${t('resources.highlight.courses.btn')}</a>
+              <a class="btn btn-outline" href="javascript:void(0)" onclick="window.location.hash='resources'; setTimeout(() => { const el = document.getElementById('courses'); if(el) { const offset = 100; const bodyRect = document.body.getBoundingClientRect().top; const elementRect = el.getBoundingClientRect().top; const elementPosition = elementRect - bodyRect; const offsetPosition = elementPosition - offset; window.scrollTo({ top: offsetPosition, behavior: 'smooth' }); } }, 200);">${t('resources.highlight.courses.btn')}</a>
             </div>
           </article>
         </div>
@@ -289,12 +288,13 @@
 
     return `
       <section class="container sec" id="people-main">
-        <div class="page-hero-copy" style="margin-bottom:40px;">
+        <div class="page-hero-copy" style="margin-bottom: 40px;">
           <h1>${t('people.title')}</h1>
           <p>${t('people.desc')}</p>
         </div>
 
         <aside class="toc-sidebar">
+            <button class="back-to-top" onclick="window.location.hash='alumni'" style="margin-bottom: 16px;">${t('people.viewAlumni')}</button>
             <h3>${t('people.toc')}</h3>
             <div class="toc-links">
                 ${tocLinks}
@@ -311,6 +311,9 @@
                   </div>
               </div>
             `).join('')}
+            <div style="text-align: center; margin-top: 40px; padding-bottom: 20px;">
+              <button class="btn btn-primary" onclick="window.location.hash='alumni'">${t('people.viewAlumni')}</button>
+            </div>
         </div>
       </section>
     `;
@@ -318,13 +321,20 @@
 
   function renderTeamGrid(list, showTitle = true) {
     if (!list.length) return `<p>${t('people.updating')}</p>`;
-    return list.map(member => `
-      <div class="member-card">
-        ${member.photo ? `<img src="${member.photo}" alt="${member.name[currentLang] || member.name.zh || member.name}" class="member-photo">` : ''}
-        <h4 class="member-name">${member.name?.[currentLang] || member.name?.zh || member.name}</h4>
-        ${showTitle && member.title ? `<p class="member-title">${member.title[currentLang] || member.title.zh || member.title}</p>` : ''}
-      </div>
-    `).join('');
+    return list.map(member => {
+      const name = member.name?.[currentLang] || member.name?.zh || member.name;
+      const nameHtml = member.homepage
+        ? `<a href="${member.homepage}" target="_blank" class="member-name-link">${name}</a>`
+        : name;
+
+      return `
+        <div class="member-card">
+          ${member.photo ? `<img src="${member.photo}" alt="${name}" class="member-photo">` : ''}
+          <h4 class="member-name">${nameHtml}</h4>
+          ${showTitle && member.title ? `<p class="member-title">${member.title[currentLang] || member.title.zh || member.title}</p>` : ''}
+        </div>
+      `;
+    }).join('');
   }
 
   function renderAlumni() {
@@ -342,12 +352,13 @@
 
     return `
       <section class="container sec" id="alumni-main">
-        <div class="page-hero-copy" style="margin-bottom:40px;">
+        <div class="page-hero-copy" style="margin-bottom: 40px;">
           <h1>${t('alumni.title')}</h1>
           <p>${t('alumni.desc')}</p>
         </div>
 
         <aside class="toc-sidebar">
+            <button class="back-to-top" onclick="window.location.hash='people'" style="margin-bottom: 16px;">${t('alumni.viewPeople')}</button>
             <h3>${t('alumni.toc')}</h3>
             <div class="toc-links">
                 ${tocLinks}
@@ -364,6 +375,9 @@
                   </div>
               </div>
             `).join('')}
+            <div style="text-align: center; margin-top: 40px; padding-bottom: 20px;">
+              <button class="btn btn-primary" onclick="window.location.hash='people'">${t('alumni.viewPeople')}</button>
+            </div>
         </div>
       </section>
     `;
@@ -390,19 +404,19 @@
       { key: 'safety', titleKey: 'pillar.safety.title', descKey: 'pillar.safety.desc' },
       { key: 'arch', titleKey: 'pillar.arch.title', descKey: 'pillar.arch.desc' }
     ];
-    
+
     // 示例高亮内容
     const highlights = [
       { title: 'MOSS: 开源对话语言模型', desc: '首个国内开源的对话式大语言模型，支持插件系统。', date: '2023.04' },
       { title: 'AnyGPT: 多模态统一建模', desc: '实现语音、图像、文本的统一离散序列建模。', date: '2024.02' },
       { title: 'SpeechGPT: 端到端语音对话', desc: 'GPT-4o 级别的实时语音交互系统。', date: '2024.06' }
     ];
-    
+
     return `
       <section class="container sec" id="research-main">
         <div class="page-hero-copy" style="margin-bottom: 40px;">
           <h1>${t('research.title')}</h1>
-          <p class="lead">${t('research.intro')}</p>
+          <p>${t('research.intro')}</p>
         </div>
         <div class="pillars-grid">
           ${pillars.map(p => `
@@ -466,7 +480,7 @@
           <p>${t('resources.desc')}</p>
         </div>
 
-        <h2 class="section-subtitle">${t('resources.courses.title')}</h2>
+        <h2 id="courses" class="section-subtitle" style="scroll-margin-top: 100px;">${t('resources.courses.title')}</h2>
         <p class="lead" style="margin-bottom: 24px;">${t('resources.courses.intro')}</p>
         <div class="highlight-grid highlight-grid-3">
           ${courses.map(card => `
@@ -478,7 +492,7 @@
           `).join('')}
         </div>
 
-        <h2 class="section-subtitle" style="margin-top: 48px;">${t('resources.projects.title')}</h2>
+        <h2 id="projects" class="section-subtitle" style="margin-top: 48px; scroll-margin-top: 100px;">${t('resources.projects.title')}</h2>
         <div class="resource-grid">
           ${projects.map(project => `
             <article class="resource-card">
@@ -517,11 +531,11 @@
 
     return `
       <section class="container sec">
-        <div class="page-hero-copy">
+        <div class="page-hero-copy" style="margin-bottom: 40px;">
           <h1>${t('positions.title')}</h1>
-          <p class="lead">${t('positions.intro')}</p>
+          <p>${t('positions.intro')}</p>
         </div>
-        <div class="resource-grid" style="margin-top:30px;">
+        <div class="resource-grid">
           ${cards.map(card => `
             <article class="resource-card">
               <h3>${card.title}</h3>
