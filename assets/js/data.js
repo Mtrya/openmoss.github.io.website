@@ -231,7 +231,7 @@ const teamData = {
         { id: 'chen-hu', name: { zh: '胡宸', en: 'Hu Chen' }, photo: 'assets/img/胡宸.jpg' },
         { id: 'luozhijie-jin', name: { zh: '金罗智杰', en: 'Luozhijie Jin' }, photo: 'assets/img/金罗智杰.png' },
         { id: 'changsong-li', name: { zh: '李畅松', en: 'Changsong Li' }, photo: 'assets/img/李畅松.jpg' },
-        { id: 'hangcheng-li', name: { zh: '李航成', en: 'Hangcheng Li' }, photo: 'assets/img/李航成.webp', homepage: 'https://github.com/lkdhy' },
+        { id: 'hangcheng-li', name: { zh: '李航成', en: 'Hangcheng Li' }, photo: 'assets/img/李航成.jpg', homepage: 'https://github.com/lkdhy' },
         { id: 'jiaxi-li', name: { zh: '李佳羲', en: 'Jiaxi Li' }, photo: 'assets/img/李佳羲.JPEG', homepage: 'https://jecci-cmd.github.io/' },
         { id: 'mingzhe-li', name: { zh: '李明哲', en: 'Mingzhe Li' }, photo: 'assets/img/李明哲.jpg', homepage: 'https://www.mubuky.com/' },
         { id: 'yinze-luo', name: { zh: '罗尹泽', en: 'Yinze Luo' }, photo: 'assets/img/罗尹泽.jpg', homepage: 'https://fudan-nlp.feishu.cn/wiki/H1GMwJjiuiN5j6kMXAGcRo13nxc?from=from_copylink' },
