@@ -17,9 +17,25 @@
   <div id="header-placeholder"></div>
 
   <main>
-    <section class="container sec" style="padding-top: 60px;">
-      <h1 data-i18n="peoplePage.title">团队成员</h1>
-      
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <span><a href="index.html" data-i18n="breadcrumb.home">首页</a></span>
+          <span class="current" data-i18n="peoplePage.title">团队成员</span>
+        </nav>
+        <div class="page-hero-content">
+          <div class="page-hero-copy">
+            <h1 data-i18n="peoplePage.title">团队成员</h1>
+            <p data-i18n="peoplePage.studentsDesc">研究生、访问学者和行业研究员共同推动大规模 AI 系统和社会应用的边界。我们的团队包括来自世界各地的优秀研究人员，他们在自然语言处理、计算机视觉、机器学习等领域进行前沿研究。</p>
+          </div>
+          <div class="page-hero-actions">
+            <a class="btn btn-primary" href="alumni.html" data-i18n="peoplePage.viewAlumni">校友网络</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container sec" style="padding-top: 0;">
       <h2 class="section-subtitle" data-i18n="people.core">导师团队</h2>
       <div class="team-members" id="core-members-container" style="margin-bottom: 60px;"></div>
 
@@ -43,7 +59,7 @@
       </div>
 
       <div style="margin-top: 60px; text-align: center; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
-        <a class="btn btn-outline" href="alumni.html" data-i18n="peoplePage.viewAlumni">查看校友网络</a>
+        <a class="btn btn-outline" href="alumni.html" data-i18n="peoplePage.viewAlumni">校友网络</a>
         <a class="btn btn-primary" href="index.html" data-i18n="peoplePage.backHome">返回首页</a>
       </div>
     </section>

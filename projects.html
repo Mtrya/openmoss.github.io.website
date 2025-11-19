@@ -17,9 +17,26 @@
   <div id="header-placeholder"></div>
 
   <main>
-    <section class="container sec" style="padding-top: 60px;">
-      <h2 data-i18n="projectsPage.projects.title">开源项目</h2>
-      
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <span><a href="index.html" data-i18n="breadcrumb.home">首页</a></span>
+          <span><a href="resources.html" data-i18n="resourcesPage.title">开放课程</a></span>
+          <span class="current" data-i18n="projectsPage.projects.title">开源项目</span>
+        </nav>
+        <div class="page-hero-content">
+          <div class="page-hero-copy">
+            <h1 data-i18n="projectsPage.projects.title">开源项目</h1>
+            <p data-i18n="projectsPage.intro">了解我们持续维护的开源项目以及它们在多模态、大模型和具身智能研究中的定位。</p>
+          </div>
+          <div class="page-hero-actions">
+            <a class="btn btn-primary" href="resources.html" data-i18n="projectsPage.viewResources">查看课程资源</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container sec">
       <div class="resource-grid" style="margin-top: 30px;">
         <article class="resource-card">
             <h3>MOSS</h3>
@@ -109,4 +126,3 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
-

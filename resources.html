@@ -17,12 +17,26 @@
   <div id="header-placeholder"></div>
 
   <main>
-    <section class="container sec" style="padding-top: 60px;">
-      <h1 data-i18n="resourcesPage.title" style="font-size: 34px; font-weight: 500;">开放课程</h1>
-      
-      <p class="lead" data-i18n="resourcesPage.intro">OpenMOSS 团队提供丰富的开放课程，帮助研究者和开发者探索大语言模型、多模态学习和具身智能等前沿领域。</p>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <span><a href="index.html" data-i18n="breadcrumb.home">首页</a></span>
+          <span class="current" data-i18n="resourcesPage.title">开放课程</span>
+        </nav>
+        <div class="page-hero-content">
+          <div class="page-hero-copy">
+            <h1 data-i18n="resourcesPage.title" style="font-size: 34px; font-weight: 500;">开放课程</h1>
+            <p class="lead" data-i18n="resourcesPage.intro">OpenMOSS 团队提供丰富的开放课程，帮助研究者和开发者探索大语言模型、多模态学习和具身智能等前沿领域。</p>
+          </div>
+          <div class="page-hero-actions">
+            <a class="btn btn-primary" href="projects.html" data-i18n="resourcesPage.viewProjects">查看开源项目</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      <div style="margin-top: 60px;">
+    <section class="container sec">
+      <div style="margin-top: 0;">
         <div class="highlight-grid highlight-grid-3" style="margin-top: 30px;">
           <article class="highlight-card">
             <h3 data-i18n="resourcesPage.prml.title">模式识别与机器学习</h3>
@@ -56,4 +70,3 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
-

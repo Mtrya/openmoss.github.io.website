@@ -18,15 +18,26 @@
   <div id="header-placeholder"></div>
 
   <main>
-    <section id="alumni-main" class="container sec">
-      <nav aria-label="Breadcrumb" class="alumni-breadcrumb">
-        <a href="index.html" data-i18n="alumniPage.breadcrumb.home">首页</a>
-        <span style="opacity:.6;"> / </span>
-        <a href="people.html" data-i18n="alumniPage.breadcrumb.people">团队成员</a>
-        <span style="opacity:.6;"> / </span>
-        <span data-i18n="alumniPage.breadcrumb.alumni"><strong>校友介绍</strong></span>
-      </nav>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <span><a href="index.html" data-i18n="breadcrumb.home">首页</a></span>
+          <span><a href="people.html" data-i18n="peoplePage.title">团队成员</a></span>
+          <span class="current" data-i18n="alumniPage.title">校友网络</span>
+        </nav>
+        <div class="page-hero-content">
+          <div class="page-hero-copy">
+            <h1 data-i18n="alumniPage.title">校友网络</h1>
+            <p data-i18n="alumniPage.intro">OpenMOSS Team 为培养了众多优秀的研究人员和工程师而自豪。我们的校友遍布学术界和工业界，在世界各地的顶尖机构和公司中发挥着重要作用。</p>
+          </div>
+          <div class="page-hero-actions">
+            <a class="btn btn-primary" href="people.html" data-i18n="alumniPage.backPeople">团队成员</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section id="alumni-main" class="container sec">
       <aside class="toc-sidebar" aria-label="快速导航">
         <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" data-i18n="alumniPage.backToTop">回到顶部</button>
         <h3 data-i18n="alumniPage.toc">目录</h3>
@@ -65,7 +76,7 @@
       
 
       <div style="margin-top: 60px; text-align: center; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
-        <a class="btn btn-outline" href="people.html" data-i18n="alumniPage.backPeople">查看团队成员</a>
+        <a class="btn btn-outline" href="people.html" data-i18n="alumniPage.backPeople">团队成员</a>
         <a class="btn btn-primary" href="index.html" data-i18n="alumniPage.backHome">返回首页</a>
       </div>
     </section>

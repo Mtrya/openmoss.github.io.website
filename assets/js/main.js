@@ -28,6 +28,7 @@ function initApp() {
       'nav.resources': '公益资源',
       'nav.alumni': '校友网络',
       'nav.join': '加入我们',
+      'breadcrumb.home': '首页',
 
       'hero.subtitle': 'OpenMOSS Team',
       'hero.title': '构建值得信赖的开放基础模型，服务社会',
@@ -119,10 +120,12 @@ function initApp() {
       // Projects Page
       'projectsPage.title': '开源项目',
       'projectsPage.projects.title': '开源项目',
+      'projectsPage.intro': '了解我们持续维护的开源项目以及它们在多模态、大模型和具身智能研究中的定位。',
+      'projectsPage.viewResources': '查看课程资源',
 
       'join.title': '加入 OpenMOSS Team',
       'join.desc': '我们正在招募对开放系统和负责任 AI 充满热情的研究生、博士后、访问学者和合作者。',
-      'join.positions': '开放职位',
+      'join.positions': '开放机会',
 
       'footer.location': '通信地址',
       'footer.address1': '徐汇区华发路699弄3号 上海创智学院',
@@ -149,7 +152,7 @@ function initApp() {
       'peoplePage.students': '学生与访问学者',
       'peoplePage.studentsDesc': '研究生、博士生、访问学者和行业研究员共同推动大规模 AI 系统和社会应用的边界。我们的团队包括来自世界各地的优秀研究人员，他们在自然语言处理、计算机视觉、机器学习等领域进行前沿研究。',
       'peoplePage.contactInfo': '如需了解更多团队信息或加入我们，请联系：<a href="mailto:llm@fudan.edu.cn">llm@fudan.edu.cn</a>',
-      'peoplePage.viewAlumni': '查看校友网络',
+      'peoplePage.viewAlumni': '校友网络',
       'peoplePage.backHome': '返回首页',
 
       // Alumni Page
@@ -180,13 +183,15 @@ function initApp() {
       'alumniPage.network.item3': '与在读学生分享经验和职业建议',
       'alumniPage.network.item4': '开展合作研究项目和产学研合作',
       'alumniPage.network.contact': '如需更新您的联系方式或了解校友活动，请联系：<a href="mailto:llm@fudan.edu.cn">llm@fudan.edu.cn</a>',
-      'alumniPage.backPeople': '查看团队成员',
+      'alumniPage.backPeople': '团队成员',
       'alumniPage.backHome': '返回首页',
 
       // Webmaster Page
       'webmasterPage.breadcrumb.home': '首页',
       'webmasterPage.breadcrumb.webmaster': '网页设计',
       'webmasterPage.title': '网页设计',
+      'webmasterPage.intro': '了解维护 OpenMOSS 官网体验的设计与前端志愿者，保持界面一致性与可访问性。',
+      'webmasterPage.viewTeam': '团队成员',
       'webmasterPage.member1.name': '郑逸宁',
       'webmasterPage.member1.role': '网页设计师',
       'webmasterPage.member2.name': '贺心嘉',
@@ -196,8 +201,9 @@ function initApp() {
       // Positions Page
       'positionsPage.title': '加入 OpenMOSS Team',
       'positionsPage.intro': '我们正在招募对开放系统和负责任 AI 充满热情的研究人员和工程师。如果您希望在大规模 AI 系统、多模态学习、具身智能等前沿领域进行研究，欢迎加入我们！',
-      'positionsPage.open.title': '开放职位',
+      'positionsPage.open.title': '开放机会',
       'positionsPage.moreDetails': '查看详情',
+      'positionsPage.viewDetails': '浏览职位详情',
       'positionsPage.phd.title': '博士研究生',
       'positionsPage.phd.desc': '我们常年招收对 NLP、多模态学习、具身智能感兴趣的博士研究生。提供充足的研究资源和国际合作机会。',
       'positionsPage.phd.req1': '计算机、人工智能或相关专业背景',
@@ -246,9 +252,10 @@ function initApp() {
       'positionsPage.applyBtn': '填写申请问卷',
       'positionsPage.summerSchool': '加入暑期学校 →',
       'positionsPage.backHome': '返回首页',
+      'positionsPage.detailsIntro': '浏览各岗位的研究方向、申请条件与流程，选择最契合你的发展路径。',
 
       // Positions Detail Page
-      'positionsDetailPage.title': '开放职位详情',
+      'positionsDetailPage.title': '开放机会详情',
       'positionsDetailPage.phd.title': '博士研究生',
       'positionsDetailPage.master.title': '硕士研究生',
       'positionsDetailPage.grad.targetTitle': '招收对象：',
@@ -351,6 +358,7 @@ function initApp() {
       'resourcesPage.contribute.item5': '💬 参与社区讨论和技术交流',
       'resourcesPage.contribute.contact': '如有合作意向或技术问题，请联系：<a href="mailto:llm@fudan.edu.cn">llm@fudan.edu.cn</a>',
       'resourcesPage.visitGitHub': '访问 GitHub',
+      'resourcesPage.viewProjects': '查看开源项目',
       'resourcesPage.backHome': '返回首页'
     },
     'en': {
@@ -362,6 +370,7 @@ function initApp() {
       'nav.resources': 'Open Resources',
       'nav.alumni': 'Alumni',
       'nav.join': 'Join Us',
+      'breadcrumb.home': 'Home',
 
       'hero.subtitle': 'OpenMOSS Team',
       'hero.title': 'Building trustworthy, open foundation models that serve society',
@@ -453,6 +462,8 @@ function initApp() {
       // Projects Page
       'projectsPage.title': 'Open Source Projects',
       'projectsPage.projects.title': 'Open Source Projects',
+      'projectsPage.intro': 'Explore our maintained open-source efforts across multimodal, foundation, and embodied intelligence research.',
+      'projectsPage.viewResources': 'View Course Resources',
 
       'join.title': 'Join OpenMOSS Team',
       'join.desc': 'We are recruiting graduate students, postdocs, visiting researchers, and collaborators who are passionate about open systems and responsible AI.',
@@ -521,6 +532,8 @@ function initApp() {
       'webmasterPage.breadcrumb.home': 'Home',
       'webmasterPage.breadcrumb.webmaster': 'Webmaster',
       'webmasterPage.title': 'Webmaster',
+      'webmasterPage.intro': 'Meet the designers and front-end volunteers who keep the OpenMOSS site consistent and accessible.',
+      'webmasterPage.viewTeam': 'View People Page',
       'webmasterPage.member1.name': 'Yining Zheng',
       'webmasterPage.member1.role': 'Web Designer',
       'webmasterPage.member2.name': 'Xinjia He',
@@ -530,8 +543,9 @@ function initApp() {
       // Positions Page
       'positionsPage.title': 'Join OpenMOSS Team',
       'positionsPage.intro': 'We are recruiting researchers and engineers passionate about open systems and responsible AI. If you want to conduct research in cutting-edge areas such as large-scale AI systems, multimodal learning, and embodied intelligence, we welcome you to join us!',
-      'positionsPage.open.title': 'Open Positions',
+      'positionsPage.open.title': 'Open Opportunities',
       'positionsPage.moreDetails': 'More details',
+      'positionsPage.viewDetails': 'Browse Role Details',
       'positionsPage.phd.title': 'PhD Students',
       'positionsPage.phd.desc': 'We recruit PhD students interested in NLP, multimodal learning, and embodied intelligence year-round. We provide ample research resources and international collaboration opportunities.',
       'positionsPage.phd.req1': 'Background in Computer Science, AI, or related fields',
@@ -580,6 +594,7 @@ function initApp() {
       'positionsPage.applyBtn': 'Fill Application Form',
       'positionsPage.summerSchool': 'Join Summer School →',
       'positionsPage.backHome': 'Back to Home',
+      'positionsPage.detailsIntro': 'Review each opening’s focus, requirements, and process to find the best fit.',
 
       // Positions Detail Page
       'positionsDetailPage.title': 'Open Positions Details',
@@ -685,6 +700,7 @@ function initApp() {
       'resourcesPage.contribute.item5': '💬 Participate in community discussions and technical exchanges',
       'resourcesPage.contribute.contact': 'For collaboration opportunities or technical questions, please contact: <a href="mailto:llm@fudan.edu.cn">llm@fudan.edu.cn</a>',
       'resourcesPage.visitGitHub': 'Visit GitHub',
+      'resourcesPage.viewProjects': 'View Open Projects',
       'resourcesPage.backHome': 'Back to Home'
     }
   };
