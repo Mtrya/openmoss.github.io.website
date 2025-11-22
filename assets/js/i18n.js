@@ -13,7 +13,7 @@
 
             // 首页 Hero
             'hero.title': 'OpenMOSS 团队',
-            'hero.p1': 'OpenMOSS 团队隶属于复旦大学，并与上海创智学院及模思智能保持紧密合作。在邱锡鹏教授的带领下，团队围绕大语言模型开展前沿研究，重点推进模型架构、评测方法与应用场景等方向，致力于打造开放、协作且具有实际影响力的人工智能创新成果。',
+            'hero.p1': 'OpenMOSS 团队隶属于上海创智学院，并与复旦大学及模思智能保持紧密合作。在邱锡鹏教授的带领下，团队围绕大语言模型（LLMs）开展前沿研究，重点推进模型架构、评测方法与应用场景等方向，致力于打造开放、协作且具有实际影响力的人工智能创新成果。',
             'hero.p2': '团队成员在人工智能领域具有坚实积累，培养的毕业生任职或深造于 MIT、UC Berkeley、CMU、FDU、SJTU 等世界顶尖高校，或加入 ByteDance、Alibaba、Tencent、AWS、Google、Microsoft、Optiver 等领先企业，或投身创新创业，形成了充满活力的学术与创新生态。',
             'hero.btn.highlights': '最新亮点',
             'hero.btn.join': '加入我们',
@@ -133,8 +133,8 @@
             // 页脚
             'footer.contact': '联系方式',
             'footer.address': '通信地址',
-            'footer.address1': '杨浦区淞沪路2005号 复旦大学 二号交叉学科楼',
-            'footer.address2': '徐汇区华发路699弄3号 上海创智学院',
+            'footer.address1': '徐汇区华发路699弄3号 上海创智学院',
+            'footer.address2': '杨浦区淞沪路2005号 复旦大学 二号交叉学科楼',
             'footer.address3': '中国 上海',
             'footer.partners': '合作单位',
             'footer.fudan': '复旦大学计算与智能创新学院',
@@ -157,7 +157,7 @@
 
             // Hero
             'hero.title': 'OpenMOSS Team',
-            'hero.p1': 'OpenMOSS Team is a research group under Fudan University, working in close collaboration with Shanghai Innovation Institution (SII) and MOSI Intelligence. Led by Prof. Xipeng Qiu, the team conducts cutting-edge research on large language models (LLMs), advancing the frontiers of model architecture, evaluation, and application with a strong commitment to open, collaborative, and impactful AI innovation.',
+            'hero.p1': 'OpenMOSS Team is a research group under the Shanghai Innovation Institution (SII), working in close collaboration with Fudan University and MOSI Intelligence. Led by Prof. Xipeng Qiu, the team conducts cutting-edge research on large language models (LLMs), advancing the frontiers of model architecture, evaluation, and application with a strong commitment to open, collaborative, and impactful AI innovation.',
             'hero.p2': 'Our team members have solid expertise in artificial intelligence. Our graduates work or pursue further studies at world-class universities such as MIT, UC Berkeley, CMU, FDU, and SJTU, join leading companies like ByteDance, Alibaba, Tencent, AWS, Google, Microsoft, and Optiver, or engage in innovation and entrepreneurship, forming a vibrant academic and innovation ecosystem.',
             'hero.btn.highlights': 'Highlights',
             'hero.btn.join': 'Join Us',
@@ -277,8 +277,8 @@
             // Footer
             'footer.contact': 'Contact',
             'footer.address': 'Address',
-            'footer.address1': 'Building X2, No. 2005 Songhu Road, Yangpu District',
-            'footer.address2': '3 Lane 699, Huafa Road, Xuhui District',
+            'footer.address1': '3 Lane 699, Huafa Road, Xuhui District',
+            'footer.address2': 'Building X2, No. 2005 Songhu Road, Yangpu District',
             'footer.address3': 'Shanghai, China',
             'footer.partners': 'Affiliations',
             'footer.fudan': 'School of Computer Science and Innovation, Fudan University',
