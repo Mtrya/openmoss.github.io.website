@@ -142,8 +142,10 @@
             'footer.nlp': '复旦大学自然语言处理实验室',
 
             // 网页设计
-            'webmaster.title': '网页设计',
-            'webmaster.intro': '了解维护 OpenMOSS 官网体验的设计与前端志愿者，保持界面一致性与可访问性。'
+            'webmaster.title': '开发团队',
+            'webmaster.intro': '了解维护 OpenMOSS 官网体验的设计与前端志愿者，保持界面一致性与可访问性。',
+            'webmaster.contribute.title': '如何贡献',
+            'webmaster.contribute.text': '欢迎通过提交 Pull Request 的方式参与网站开发和改进！仓库地址：'
         },
 
         en: {
@@ -286,8 +288,10 @@
             'footer.nlp': 'The Fudan University Natural Language Processing Group',
 
             // Webmaster
-            'webmaster.title': 'Webmaster',
-            'webmaster.intro': 'Meet the design and frontend volunteers who maintain the OpenMOSS website experience, ensuring interface consistency and accessibility.'
+            'webmaster.title': 'Developers',
+            'webmaster.intro': 'Meet the design and frontend volunteers who maintain the OpenMOSS website experience, ensuring interface consistency and accessibility.',
+            'webmaster.contribute.title': 'How to Contribute',
+            'webmaster.contribute.text': 'Welcome to contribute to the website development and improvements by submitting Pull Requests! Repository: '
         }
     };
 

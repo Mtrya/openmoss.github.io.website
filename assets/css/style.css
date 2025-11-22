@@ -1238,6 +1238,19 @@ html[lang="zh-CN"] .footer-grid {
   transform: scale(1.05);
 }
 
+/* Webmaster/Dev team name links styling */
+.webmaster-link {
+  color: var(--fudan-blue);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.webmaster-link:hover {
+  color: var(--fudan-red);
+  text-decoration: underline;
+}
+
 /* Floating sidebar (Table of Contents) */
 .toc-sidebar {
   position: fixed;

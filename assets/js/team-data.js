@@ -155,7 +155,6 @@ const teamData = {
         { id: 'senyu-fei', name: { zh: '费森俞', en: 'Senyu Fei' }, photo: 'assets/img/费森俞.JPEG' },
         { id: 'zhaoye-fei', name: { zh: '费朝烨', en: 'Zhaoye Fei' }, photo: 'assets/img/费朝烨.jpeg', homepage: 'https://ngc7292.github.io/' },
         { id: 'zhaoyang-fu', name: { zh: '付兆洋', en: 'Zhaoyang Fu' }, photo: 'assets/img/付兆洋.jpg' },
-        { id: 'siyang-he', name: { zh: '何思洋', en: 'Siyang He' }, photo: 'assets/img/何思洋.jpg' },
         { id: 'xingyang-he', name: { zh: '何星阳', en: 'Xingyang He' }, photo: 'assets/img/何星阳.png' },
         { id: 'tianyu-huai', name: { zh: '怀天宇', en: 'Tianyu Huai' }, photo: 'assets/img/怀天宇.jpg', homepage: 'https://yutinh.github.io/' },
         { id: 'zezheng-huai', name: { zh: '淮泽正', en: 'Zezheng Huai' }, photo: 'assets/img/淮泽正.jpg', homepage: 'https://github.com/Huaizz-shawen' },
@@ -204,7 +203,8 @@ const teamData = {
         { id: 'haowei-zhang', name: { zh: '张浩威', en: 'Haowei Zhang' }, photo: 'assets/img/张浩威.png', homepage: 'https://haowei-freesky.github.io/' },
         { id: 'haozhe-zhang', name: { zh: '张浩哲', en: 'Haozhe Zhang' }, photo: 'assets/img/张浩哲.png' },
         { id: 'wenbo-zhang', name: { zh: '张文擘', en: 'Wenbo Zhang' }, photo: 'assets/img/张文擘.JPEG', homepage: 'https://github.com/ppolariss' },
-        { id: 'yiyang-zhang', name: { zh: '张奕洋', en: 'Yiyang Zhang' }, photo: 'assets/img/张奕洋.jpg', homepage: 'https://github.com/CloudRipple' }
+        { id: 'yiyang-zhang', name: { zh: '张奕洋', en: 'Yiyang Zhang' }, photo: 'assets/img/张奕洋.jpg', homepage: 'https://github.com/CloudRipple' },
+        { id: 'kang-yu', name: { zh: '于康', en: 'Kang Yu' }, photo: 'assets/img/于康.jpg', homepage: 'https://kaysonyu.github.io' }
     ],
 
     // 硕士研究生
@@ -263,7 +263,7 @@ const teamData = {
         { id: 'kuangwei-chen', name: { zh: '陈匡巍', en: 'Kuangwei Chen' }, photo: 'assets/img/陈匡巍.jpg' },
         { id: 'zihao-dai', name: { zh: '戴子皓', en: 'Zihao Dai' }, photo: 'assets/img/戴子皓.jpg' },
         { id: 'tingshuo-fan', name: { zh: '范庭朔', en: 'Tingshuo Fan' }, photo: 'assets/img/范庭朔.png', homepage: 'https://survivor613.github.io/' },
-        { id: 'ching-wing-kwok', name: { zh: '郭政颍', en: 'Ching Wing Kwok' }, photo: 'assets/img/郭政颍.jpg', homepage: 'https://academic.seleixi.site/' },
+        { id: 'siyang-he', name: { zh: '何思洋', en: 'Siyang He' }, photo: 'assets/img/何思洋.jpg' },
         { id: 'chen-hu', name: { zh: '胡宸', en: 'Hu Chen' }, photo: 'assets/img/胡宸.jpg' },
         { id: 'luozhijie-jin', name: { zh: '金罗智杰', en: 'Luozhijie Jin' }, photo: 'assets/img/金罗智杰.png' },
         { id: 'changsong-li', name: { zh: '李畅松', en: 'Changsong Li' }, photo: 'assets/img/李畅松.jpg' },
@@ -304,8 +304,7 @@ const teamData = {
         { id: 'hongnan-ma', name: { zh: '马红楠', en: 'Hongnan Ma' }, photo: 'assets/img/马红楠.jpg' },
         { id: 'jiaxing-miao', name: { zh: '苗嘉兴', en: 'Jiaxing Miao' }, photo: 'assets/img/苗嘉兴.jpg', homepage: 'https://scholar.google.com/citations?user=LU4PAJUAAAAJ&hl=en' },
         { id: 'yiwei-shi', name: { zh: '史一苇', en: 'Yiwei Shi' }, photo: 'assets/img/史一苇.jpg' },
-        { id: 'yiran-suo', name: { zh: '锁祎然', en: 'Yiran Suo' }, photo: 'assets/img/锁祎然.png' },
-        { id: 'kang-yu', name: { zh: '于康', en: 'Kang Yu' }, photo: 'assets/img/于康.jpg', homepage: 'https://kaysonyu.github.io' }
+        { id: 'yiran-suo', name: { zh: '锁祎然', en: 'Yiran Suo' }, photo: 'assets/img/锁祎然.png' }
     ],
 
     // 校友（已毕业）

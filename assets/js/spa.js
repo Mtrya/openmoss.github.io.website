@@ -148,7 +148,7 @@
         </div>
         <div class="container">
           <div class="footer-note">
-            <p>&copy; ${year} OpenMOSS Team</p>
+            <p><a href="#webmaster" style="color: rgba(255, 255, 255, 0.75); text-decoration: none;">${currentLang === 'zh' ? '开发团队' : 'Developers'}</a> | &copy; ${year} OpenMOSS Team</p>
           </div>
         </div>
       </footer>
@@ -650,6 +650,7 @@
   }
 
   function renderWebmaster() {
+    const repoUrl = 'https://github.com/OpenMOSS/openmoss.github.io';
     return `
       <section class="container sec">
         <div class="page-hero-copy">
@@ -659,11 +660,15 @@
         <div class="alumni-list">
           ${SPA_DATA.webmaster.members.map(member => `
             <div class="alumni-row">
-              <span class="name">${member.name}</span>
-              <span class="destination">${member.role}</span>
+              <span class="name"><a href="${member.github}" target="_blank" class="webmaster-link">${member.name[currentLang] || member.name.zh}</a></span>
+              <span class="destination">${member.role[currentLang] || member.role.zh}</span>
             </div>
           `).join('')}
         </div>
+      </section>
+      <section class="container sec" style="margin-top: 48px;">
+        <h2>${t('webmaster.contribute.title')}</h2>
+        <p>${t('webmaster.contribute.text')}<a href="${repoUrl}" target="_blank" style="color: var(--fudan-blue); font-weight: 500;">${repoUrl}</a></p>
       </section>
     `;
   }

@@ -239,8 +239,21 @@
     },
     webmaster: {
       members: [
-        { name: '郑逸宁', role: '网页设计师' },
-        { name: '贺心嘉', role: '网页设计师' }
+        {
+          name: { zh: '贺心嘉', en: 'Xinji He' },
+          role: { zh: '网页设计与开发', en: 'Web Design & Development' },
+          github: 'https://github.com/644p45mhzc-wq'
+        },
+        {
+          name: { zh: '郑逸宁', en: 'Yining Zheng' },
+          role: { zh: '网页设计与开发', en: 'Web Design & Development' },
+          github: 'https://github.com/WillQvQ'
+        },
+        {
+          name: { zh: '陈新驰', en: 'Xinchi Chen' },
+          role: { zh: '网页设计', en: 'Web Design' },
+          github: 'https://github.com/dalstonChen'
+        }
       ]
     },
     footer: {
