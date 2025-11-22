@@ -306,28 +306,6 @@ const teamData = {
         { id: 'yiwei-shi', name: { zh: '史一苇', en: 'Yiwei Shi' }, photo: 'assets/img/史一苇.jpg' },
         { id: 'yiran-suo', name: { zh: '锁祎然', en: 'Yiran Suo' }, photo: 'assets/img/锁祎然.png' }
     ],
-
-    // 校友（已毕业）
-    alumni: [
-        {
-            id: 'alumni-001',
-            name: {
-                zh: '周八',
-                en: 'Ba Zhou'
-            },
-            degree: {
-                zh: '博士',
-                en: 'PhD'
-            },
-            year: 2020, // 毕业年份
-            current: {
-                zh: 'MIT 助理教授',
-                en: 'Assistant Professor, MIT'
-            },
-            photo: 'assets/img/default-avatar.svg'
-        }
-        // ... 添加更多校友
-    ]
 };;
 
 const alumniData = {
