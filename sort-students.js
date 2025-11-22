@@ -1,4 +1,4 @@
-// 对博士生和硕士生列表进行字典序排序的脚本
+// 自动排序并替换博士生、硕士生、本科生和校友列表的脚本
 const fs = require('fs');
 const path = require('path');
 
@@ -7,18 +7,42 @@ const filePath = path.join(__dirname, 'assets/js/team-data.js');
 let content = fs.readFileSync(filePath, 'utf8');
 
 // 提取博士生数组
-const phdMatch = content.match(/phdStudents:\s*\[([\s\S]*?)\s*\],\s*\/\/ 硕士研究生/);
-const phdArrayStr = phdMatch ? phdMatch[1] : '';
+const phdMatch = content.match(/(\/\/ 博士研究生\s*phdStudents:\s*\[)([\s\S]*?)(\s*\],\s*\/\/ 硕士研究生)/);
+const phdArrayStr = phdMatch ? phdMatch[2] : '';
 
 // 提取硕士生数组
-const masterMatch = content.match(/masterStudents:\s*\[([\s\S]*?)\s*\],\s*\/\/ 本科生/);
-const masterArrayStr = masterMatch ? masterMatch[1] : '';
+const masterMatch = content.match(/(\/\/ 硕士研究生\s*masterStudents:\s*\[)([\s\S]*?)(\s*\],\s*\/\/ 本科生)/);
+const masterArrayStr = masterMatch ? masterMatch[2] : '';
+
+// 提取本科生数组
+const undergradMatch = content.match(/(\/\/ 本科生\s*undergraduates:\s*\[)([\s\S]*?)(\s*\],\s*\/\/ 访问学生)/);
+const undergradArrayStr = undergradMatch ? undergradMatch[2] : '';
+
+// 提取访问学生数组
+const visitingMatch = content.match(/(\/\/ 访问学生\s*visitingStudents:\s*\[)([\s\S]*?)(\s*\]\s*,\s*\})/);
+const visitingArrayStr = visitingMatch ? visitingMatch[2] : '';
+
+// 提取博士生校友数组
+const alumniPhdMatch = content.match(/(\/\/ 博士生校友\s*phd:\s*\[)([\s\S]*?)(\s*\],\s*\/\/ 硕士生校友)/);
+const alumniPhdArrayStr = alumniPhdMatch ? alumniPhdMatch[2] : '';
+
+// 提取硕士生校友数组
+const alumniMasterMatch = content.match(/(\/\/ 硕士生校友\s*masters:\s*\[)([\s\S]*?)(\s*\],\s*\/\/ 本科生校友)/);
+const alumniMasterArrayStr = alumniMasterMatch ? alumniMasterMatch[2] : '';
+
+// 提取本科生校友数组
+const alumniUndergradMatch = content.match(/(\/\/ 本科生校友\s*undergrad:\s*\[)([\s\S]*?)(\s*\],\s*\/\/ 访问学生校友)/);
+const alumniUndergradArrayStr = alumniUndergradMatch ? alumniUndergradMatch[2] : '';
+
+// 提取访问学生校友数组
+const alumniVisitingMatch = content.match(/(\/\/ 访问学生校友\s*visiting:\s*\[)([\s\S]*?)(\s*\]\s*\})/);
+const alumniVisitingArrayStr = alumniVisitingMatch ? alumniVisitingMatch[2] : '';
 
 // 解析学生对象的函数
 function parseStudents(arrayStr) {
     const students = [];
     const regex = /\{\s*id:\s*'([^']+)',\s*name:\s*\{\s*zh:\s*'([^']+)',\s*en:\s*'([^']+)'\s*\},\s*photo:\s*'([^']+)'(?:,\s*homepage:\s*'([^']+)')?\s*\}/g;
-    
+
     let match;
     while ((match = regex.exec(arrayStr)) !== null) {
         students.push({
@@ -26,11 +50,28 @@ function parseStudents(arrayStr) {
             nameZh: match[2],
             nameEn: match[3],
             photo: match[4],
-            homepage: match[5] || null,
-            original: match[0]
+            homepage: match[5] || null
         });
     }
     return students;
+}
+
+// 解析校友对象的函数
+function parseAlumni(arrayStr) {
+    const alumni = [];
+    const regex = /\{\s*name:\s*\{\s*zh:\s*'([^']+)',\s*en:\s*'([^']+)'\s*\},\s*destination:\s*\{\s*zh:\s*'([^']+)',\s*en:\s*'([^']+)'\s*\}(?:,\s*homepage:\s*(?:'([^']+)'|null))?\s*\}/g;
+
+    let match;
+    while ((match = regex.exec(arrayStr)) !== null) {
+        alumni.push({
+            nameZh: match[1],
+            nameEn: match[2],
+            destZh: match[3],
+            destEn: match[4],
+            homepage: match[5] || null
+        });
+    }
+    return alumni;
 }
 
 // 格式化学生对象为代码字符串
@@ -39,35 +80,134 @@ function formatStudent(student, indent = '        ') {
     return `${indent}{ id: '${student.id}', name: { zh: '${student.nameZh}', en: '${student.nameEn}' }, photo: '${student.photo}'${homepageStr} }`;
 }
 
+// 格式化校友对象为代码字符串
+function formatAlumni(alumni, indent = '        ') {
+    const homepageStr = alumni.homepage ? `, homepage: '${alumni.homepage}'` : ', homepage: null';
+    return `${indent}{ name: { zh: '${alumni.nameZh}', en: '${alumni.nameEn}' }, destination: { zh: '${alumni.destZh}', en: '${alumni.destEn}' }${homepageStr} }`;
+}
+
 // 解析学生列表
 const phdStudents = parseStudents(phdArrayStr);
 const masterStudents = parseStudents(masterArrayStr);
+const undergradStudents = parseStudents(undergradArrayStr);
+const visitingStudents = parseStudents(visitingArrayStr);
+
+// 解析校友列表
+const alumniPhd = parseAlumni(alumniPhdArrayStr);
+const alumniMaster = parseAlumni(alumniMasterArrayStr);
+const alumniUndergrad = parseAlumni(alumniUndergradArrayStr);
+const alumniVisiting = parseAlumni(alumniVisitingArrayStr);
 
 console.log(`找到 ${phdStudents.length} 个博士生`);
 console.log(`找到 ${masterStudents.length} 个硕士生`);
+console.log(`找到 ${undergradStudents.length} 个本科生`);
+console.log(`找到 ${visitingStudents.length} 个访问学生`);
+console.log(`找到 ${alumniPhd.length} 个博士生校友`);
+console.log(`找到 ${alumniMaster.length} 个硕士生校友`);
+console.log(`找到 ${alumniUndergrad.length} 个本科生校友`);
+console.log(`找到 ${alumniVisiting.length} 个访问学生校友`);
 
-// 按英文名字典序排序
-phdStudents.sort((a, b) => a.nameEn.localeCompare(b.nameEn));
-masterStudents.sort((a, b) => a.nameEn.localeCompare(b.nameEn));
+// 按中文名拼音字典序排序
+phdStudents.sort((a, b) => a.nameZh.localeCompare(b.nameZh, 'zh-CN'));
+masterStudents.sort((a, b) => a.nameZh.localeCompare(b.nameZh, 'zh-CN'));
+undergradStudents.sort((a, b) => a.nameZh.localeCompare(b.nameZh, 'zh-CN'));
+visitingStudents.sort((a, b) => a.nameZh.localeCompare(b.nameZh, 'zh-CN'));
+alumniPhd.sort((a, b) => a.nameZh.localeCompare(b.nameZh, 'zh-CN'));
+alumniMaster.sort((a, b) => a.nameZh.localeCompare(b.nameZh, 'zh-CN'));
+alumniUndergrad.sort((a, b) => a.nameZh.localeCompare(b.nameZh, 'zh-CN'));
+alumniVisiting.sort((a, b) => a.nameZh.localeCompare(b.nameZh, 'zh-CN'));
 
 // 生成排序后的代码
-console.log('\n========== 排序后的博士生列表 ==========\n');
-console.log('    phdStudents: [');
-phdStudents.forEach((student, index) => {
+const phdList = phdStudents.map((student, index) => {
     const comma = index < phdStudents.length - 1 ? ',' : '';
-    console.log(formatStudent(student) + comma);
-});
-console.log('    ],\n');
+    return formatStudent(student) + comma;
+}).join('\n');
 
-console.log('\n========== 排序后的硕士生列表 ==========\n');
-console.log('    masterStudents: [');
-masterStudents.forEach((student, index) => {
+const masterList = masterStudents.map((student, index) => {
     const comma = index < masterStudents.length - 1 ? ',' : '';
-    console.log(formatStudent(student) + comma);
-});
-console.log('    ],\n');
+    return formatStudent(student) + comma;
+}).join('\n');
 
-// 询问是否要写入文件
-console.log('\n提示: 将上面的排序结果复制到 team-data.js 中对应位置');
-console.log('或者运行: node sort-students.js > sorted-output.txt');
+const undergradList = undergradStudents.map((student, index) => {
+    const comma = index < undergradStudents.length - 1 ? ',' : '';
+    return formatStudent(student) + comma;
+}).join('\n');
+
+const visitingList = visitingStudents.map((student, index) => {
+    const comma = index < visitingStudents.length - 1 ? ',' : '';
+    return formatStudent(student) + comma;
+}).join('\n');
+
+const alumniPhdList = alumniPhd.map((alumni, index) => {
+    const comma = index < alumniPhd.length - 1 ? ',' : '';
+    return formatAlumni(alumni) + comma;
+}).join('\n');
+
+const alumniMasterList = alumniMaster.map((alumni, index) => {
+    const comma = index < alumniMaster.length - 1 ? ',' : '';
+    return formatAlumni(alumni) + comma;
+}).join('\n');
+
+const alumniUndergradList = alumniUndergrad.map((alumni, index) => {
+    const comma = index < alumniUndergrad.length - 1 ? ',' : '';
+    return formatAlumni(alumni) + comma;
+}).join('\n');
+
+const alumniVisitingList = alumniVisiting.map((alumni, index) => {
+    const comma = index < alumniVisiting.length - 1 ? ',' : '';
+    return formatAlumni(alumni) + comma;
+}).join('\n');
+
+// 替换文件内容
+if (phdMatch) {
+    const newPhdSection = phdMatch[1] + '\n' + phdList + '\n    ' + phdMatch[3];
+    content = content.replace(phdMatch[0], newPhdSection);
+}
+
+if (masterMatch) {
+    const newMasterSection = masterMatch[1] + '\n' + masterList + '\n    ' + masterMatch[3];
+    content = content.replace(masterMatch[0], newMasterSection);
+}
+
+if (undergradMatch) {
+    const newUndergradSection = undergradMatch[1] + '\n' + undergradList + '\n    ' + undergradMatch[3];
+    content = content.replace(undergradMatch[0], newUndergradSection);
+}
+
+if (visitingMatch) {
+    const newVisitingSection = visitingMatch[1] + '\n' + visitingList + '\n    ' + visitingMatch[3];
+    content = content.replace(visitingMatch[0], newVisitingSection);
+}
+
+if (alumniPhdMatch) {
+    const newAlumniPhdSection = alumniPhdMatch[1] + '\n' + alumniPhdList + '\n    ' + alumniPhdMatch[3];
+    content = content.replace(alumniPhdMatch[0], newAlumniPhdSection);
+}
+
+if (alumniMasterMatch) {
+    const newAlumniMasterSection = alumniMasterMatch[1] + '\n' + alumniMasterList + '\n    ' + alumniMasterMatch[3];
+    content = content.replace(alumniMasterMatch[0], newAlumniMasterSection);
+}
+
+if (alumniUndergradMatch) {
+    const newAlumniUndergradSection = alumniUndergradMatch[1] + '\n' + alumniUndergradList + '\n    ' + alumniUndergradMatch[3];
+    content = content.replace(alumniUndergradMatch[0], newAlumniUndergradSection);
+}
+
+if (alumniVisitingMatch) {
+    const newAlumniVisitingSection = alumniVisitingMatch[1] + '\n' + alumniVisitingList + '\n    ' + alumniVisitingMatch[3];
+    content = content.replace(alumniVisitingMatch[0], newAlumniVisitingSection);
+}
+
+// 写回文件前清理多余的空行（连续3个或以上的空行替换为2个）
+content = content.replace(/\n\s*\n\s*\n\s*\n+/g, '\n\n\n');
+// 清理数组最后一项和闭合括号之间的空行
+content = content.replace(/\n\s*\n\s*\]/g, '\n    ]');
+// 确保文件末尾只有一个换行符
+content = content.replace(/\n+$/, '\n');
+
+// 写回文件
+fs.writeFileSync(filePath, content, 'utf8');
+
+console.log('\n✅ 排序完成！所有学生和校友列表已按字典序更新。');
 
