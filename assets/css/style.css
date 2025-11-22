@@ -658,7 +658,92 @@ html[lang="zh-CN"] .highlight-card h3 {
 }
 
 .publication-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.publication-item {
+  margin-bottom: 18px;
   padding-left: 20px;
+  position: relative;
+  line-height: 1.6;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.publication-item::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--text-light);
+  font-size: 18px;
+  top: 0;
+}
+
+.pub-main-line {
+  margin-bottom: 4px;
+}
+
+.pub-support {
+  font-style: italic;
+  color: var(--text-light);
+  font-weight: 400;
+}
+
+.pub-alphabetical {
+  font-style: normal;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.pub-title {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.pub-authors {
+  color: var(--text-light);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.pub-venue {
+  display: inline;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.pub-venue em {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.pub-links {
+  display: inline;
+  margin-left: 4px;
+}
+
+.pub-link {
+  color: var(--fudan-blue);
+  text-decoration: none;
+  font-weight: 400;
+  margin: 0 2px;
+  transition: color 0.2s;
+}
+
+.pub-link:hover {
+  color: var(--fudan-red);
+  text-decoration: underline;
+}
+
+.pub-note {
+  margin-top: 12px;
+  padding-left: 20px;
+  font-size: 13px;
+  color: var(--text-light);
+  font-style: italic;
 }
 
 @media (max-width: 768px) {

@@ -183,8 +183,7 @@
   function renderHero() {
     const paragraphs = [
       t('hero.p1'),
-      t('hero.p2'),
-      t('hero.p3')
+      t('hero.p2')
     ];
 
     return `
@@ -445,14 +444,40 @@
       
       <section class="container sec">
         <h2>${t('research.publications.title')}</h2>
-        ${pillars.map(p => `
+        ${pillars.map(p => {
+      const pubs = SPA_DATA.publications[p.key] || [];
+      return `
           <div id="pub-${p.key}" class="publication-section">
             <h3 class="publication-category">${t(p.titleKey)}</h3>
-            <div class="publication-list">
-              <p style="color: var(--text-light); font-style: italic;">代表工作持续更新中...</p>
-            </div>
+            <ul class="publication-list">
+              ${pubs.length > 0 ? pubs.map(pub => {
+        // 处理链接显示
+        const processedLinks = pub.links.map(link => {
+          if (link.type === 'ArXiv') {
+            const pdfUrl = link.url.replace('/abs/', '/pdf/');
+            return `<a href="${link.url}" target="_blank" class="pub-link">[Abstract]</a> <a href="${pdfUrl}" target="_blank" class="pub-link">[PDF]</a>`;
+          } else if (link.type === 'GitHub') {
+            return `<a href="${link.url}" target="_blank" class="pub-link">[Resource]</a>`;
+          } else {
+            return `<a href="${link.url}" target="_blank" class="pub-link">[${link.type}]</a>`;
+          }
+        }).join(' ');
+
+        return `
+                <li class="publication-item">
+                  <div class="pub-main-line">
+                    ${pub.support ? '<span class="pub-support">Support</span> ' : ''}<span class="pub-title">${pub.title}</span>${pub.venue ? `, <em>${pub.venue}</em>` : ''}, ${pub.year}.
+                    ${processedLinks}
+                  </div>
+                  <div class="pub-authors">${pub.alphabetical ? '<span class="pub-alphabetical">*</span> ' : ''}${pub.authors}</div>
+                </li>
+              `;
+      }).join('') : '<p style="color: var(--text-light); font-style: italic;">代表工作持续更新中...</p>'}
+            </ul>
           </div>
-        `).join('')}
+        `;
+    }).join('')}
+        <p class="pub-note">* Authors of Support projects are listed in alphabetical order.</p>
       </section>
     `;
   }
@@ -467,10 +492,10 @@
     const projects = [
       { name: 'MOSS', desc: t('resources.project.moss'), stars: '12k+ ⭐', stack: 'Python', url: 'https://github.com/OpenMOSS/MOSS' },
       { name: 'AnyGPT', desc: t('resources.project.anygpt'), stars: '500+ ⭐', stack: 'Python', url: 'https://github.com/OpenMOSS/AnyGPT' },
-      { name: 'TTSD', desc: t('resources.project.ttsd'), stars: '200+ ⭐', stack: 'Python', url: 'https://github.com/OpenMOSS/TTSD' },
-      { name: 'SpeechGPT', desc: t('resources.project.speechgpt'), stars: '300+ ⭐', stack: 'Python', url: 'https://github.com/OpenMOSS/SpeechGPT' },
-      { name: 'Speech-to-Speech LLM', desc: t('resources.project.speech'), stars: '100+ ⭐', stack: 'Python', url: 'https://github.com/OpenMOSS/Speech-to-Speech-LLM' },
-      { name: 'SAEs', desc: t('resources.project.saes'), stars: '50+ ⭐', stack: 'Python', url: 'https://github.com/OpenMOSS/SAEs' }
+      { name: 'MOSS-TTSD', desc: t('resources.project.ttsd'), stars: '200+ ⭐', stack: 'Python', url: 'https://github.com/OpenMOSS/MOSS-TTSD' },
+      { name: 'SpeechGPT-2.0', desc: t('resources.project.speechgpt'), stars: '360+ ⭐', stack: 'Python', url: 'https://github.com/OpenMOSS/SpeechGPT-2.0-preview' },
+      { name: 'DiRL', desc: t('resources.project.dirl'), stars: '100+ ⭐', stack: 'Python', url: 'https://github.com/OpenMOSS/DiRL' },
+      { name: 'Language-Model-SAEs', desc: t('resources.project.saes'), stars: '164+ ⭐', stack: 'Python', url: 'https://github.com/OpenMOSS/Language-Model-SAEs' }
     ];
 
     return `
